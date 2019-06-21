@@ -1,0 +1,10 @@
+# Ignore any files you wish to preserve format in (scss files?).
+src/theme/index.scss
+
+# Ignore build folders
+dist
+lib
+storybook-build
+
+# Ignore node modules folder
+node_modules

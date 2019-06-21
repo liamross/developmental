@@ -1,0 +1,109 @@
+@import '../theme/index';
+
+body {
+  color: $font-color-dark;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Markdown style --- */
+
+code.language-text {
+  color: $font-color-dark;
+  background: rgba(200, 200, 0, 0.3) !important;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-bottom: $font-size-default;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  @include header-font($font-size-h1);
+}
+
+h2 {
+  @include header-font($font-size-h2, true);
+}
+
+h3 {
+  @include header-font($font-size-h3);
+}
+
+h4 {
+  @include header-font($font-size-h4);
+}
+
+h5 {
+  @include header-font($font-size-default);
+}
+
+h6 {
+  @include header-font($font-size-default);
+}
+
+p,
+li {
+  @include body-font();
+}
+
+/* --- Gatsby code highlight fix --- */
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  margin: 0 0 $font-size-default;
+  padding: 16px;
+  overflow: auto;
+
+  pre > code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+  }
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*='language-'] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight-code-line {
+  background-color: rgba(200, 200, 0, 0.2);
+  display: block;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  padding-right: 1rem;
+  padding-left: 0.75rem;
+  border-left: 0.25rem solid white;
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding-left: 2rem;
+}

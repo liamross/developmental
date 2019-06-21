@@ -1,0 +1,55 @@
+/* --- Colors --- */
+
+// Monochromatic color variables
+$monochromatic-light:        #fff;
+$monochromatic-mid:          #ddd;
+$monochromatic-dark:         #777;
+
+// Validation color variables
+$validation-neutral:         #2196f3;
+$validation-success:         #71d420;
+$validation-warning:         #ff8c00;
+$validation-error:           #f13e5f;
+
+// Font color variables
+$font-color-light:           #fff;
+$font-color-mid:             #818a9e;
+$font-color-dark:            #333d51;
+
+/* --- Fonts --- */
+
+// Font sizes
+$font-size-default: 1rem;
+$font-size-small: 1rem / 1.25;
+$font-size-h4: $font-size-default * 1.25;
+$font-size-h3: $font-size-default * 1.25 * 1.25;
+$font-size-h2: $font-size-default * 1.25 * 1.25 * 1.25;
+$font-size-h1: $font-size-default * 1.25 * 1.25 * 1.25 * 1.25;
+
+// Line heights
+$line-height-default: $font-size-default * 2;
+
+// Font mixins
+@mixin header-font($size, $has-top-border: false) {
+  font-size: $size;
+  margin: 0 0 $size;
+  font-family: 'Merriweather Sans', sans-serif;
+
+  @if $has-top-border {
+    margin-top: $size;
+    padding-top: $size;
+    border-top: 1px solid $monochromatic-mid;
+  } @else {
+    margin-top: $size * 2;
+
+    &:first-of-type {
+      margin-top: $size;
+    }
+  }
+}
+
+@mixin body-font() {
+  font-size: $font-size-default;
+  line-height: $line-height-default;
+  margin: 0 0 $font-size-default;
+}
