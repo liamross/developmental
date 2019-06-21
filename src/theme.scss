@@ -1,22 +1,28 @@
 /* --- Colors --- */
 
 // Monochromatic color variables
-$monochromatic-light:        #fff;
+$monochromatic-light:        #eee;
 $monochromatic-mid:          #ddd;
 $monochromatic-dark:         #777;
 
-// Validation color variables
-$validation-neutral:         #2196f3;
-$validation-success:         #71d420;
-$validation-warning:         #ff8c00;
-$validation-error:           #f13e5f;
-
 // Font color variables
 $font-color-light:           #fff;
-$font-color-mid:             #818a9e;
-$font-color-dark:            #333d51;
+$font-color-mid:             #607080;
+$font-color-dark:            #252535;
+
+
+/* --- Layout --- */
+
+// Breakpoints
+$phone-upper-boundary:  768px;
+$tablet-upper-boundary: 1024px;
 
 /* --- Fonts --- */
+
+$montserrat: 'Montserrat', sans-serif;
+$merriweather: 'Merriweather', serif;
+$merriweather-sans: 'Merriweather Sans', sans-serif;
+$ibm-plex-mono: 'IBM Plex Mono', monospace;
 
 // Font sizes
 $font-size-default: 1rem;
@@ -33,7 +39,7 @@ $line-height-default: $font-size-default * 2;
 @mixin header-font($size, $has-top-border: false) {
   font-size: $size;
   margin: 0 0 $size;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: $ibm-plex-mono;
 
   @if $has-top-border {
     margin-top: $size;
@@ -49,7 +55,22 @@ $line-height-default: $font-size-default * 2;
 }
 
 @mixin body-font() {
+  font-family: $merriweather;
   font-size: $font-size-default;
   line-height: $line-height-default;
   margin: 0 0 $font-size-default;
+}
+
+@mixin link($dark: false) {
+  text-decoration: none;
+
+  @if $dark {
+    color: $font-color-dark;
+  } @else {
+    color: $font-color-mid;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
 }

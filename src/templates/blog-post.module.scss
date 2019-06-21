@@ -1,0 +1,19 @@
+@import '../theme';
+
+.footer {
+  width: 100%;
+  background-color: $font-color-mid;
+  color: $font-color-light;
+  display: flex;
+  justify-content: center;
+}
+
+.footerWrapper {
+  max-width: 50rem;
+  width: 100%;
+  padding: 2.625rem 1.3125rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

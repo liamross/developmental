@@ -1,0 +1,11 @@
+@import '../theme';
+
+.other {
+  a {
+    @include link();
+    color: $font-color-light;
+    margin: 0 1rem;
+  }
+
+  display: flex;
+}

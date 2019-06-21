@@ -1,8 +1,10 @@
-@import '../theme/index';
+@import '../theme';
+@import '~normalize.css';
 
 body {
   color: $font-color-dark;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $montserrat;
+  font-display: swap;
 }
 
 /* --- Markdown style --- */
@@ -15,7 +17,7 @@ code.language-text {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: $ibm-plex-mono;
   margin-bottom: $font-size-default;
 }
 
@@ -29,8 +31,19 @@ tbody > tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid $monochromatic-mid;
+  margin: $font-size-h2 0;
+}
+
 h1 {
   @include header-font($font-size-h1);
+
+  &.page-title {
+    margin: 0;
+    text-align: center;
+  }
 }
 
 h2 {
@@ -51,6 +64,14 @@ h5 {
 
 h6 {
   @include header-font($font-size-default);
+  color: $font-color-mid;
+  font-weight: 400;
+
+  &.page-title {
+    margin: 0;
+    padding: 0.5rem 0 2rem;
+    text-align: center;
+  }
 }
 
 p,
@@ -72,7 +93,7 @@ li {
   overflow: auto;
 
   pre > code {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: $ibm-plex-mono;
     font-size: 1rem;
   }
 }
@@ -94,13 +115,13 @@ li {
 }
 
 .gatsby-highlight-code-line {
-  background-color: rgba(200, 200, 0, 0.2);
+  background-color: rgba(0, 100, 255, 0.2);
   display: block;
   margin-right: -1rem;
   margin-left: -1rem;
   padding-right: 1rem;
   padding-left: 0.75rem;
-  border-left: 0.25rem solid white;
+  border-left: 0.25rem solid rgba(0, 100, 255, 0.8);
 }
 
 /* Adjust the position of the line numbers */

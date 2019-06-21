@@ -1,17 +1,12 @@
 import React from 'react';
-import {Link} from 'gatsby';
 import style from './layout.module.scss';
 import Center from './center';
+import Header from './header';
 
-function Layout({title, children, nonBlog}) {
-  const header = (
-    <h3>
-      <Link to={`/`}>{title}</Link>
-    </h3>
-  );
+export default function Layout({children, nonBlog}) {
   return (
     <Center>
-      <header>{header}</header>
+      <Header />
       {!nonBlog ? (
         <main>
           <article className={style.article}>{children}</article>
@@ -19,13 +14,6 @@ function Layout({title, children, nonBlog}) {
       ) : (
         <main>{children}</main>
       )}
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
     </Center>
   );
 }
-
-export default Layout;

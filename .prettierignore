@@ -1,5 +1,5 @@
 # Ignore any files you wish to preserve format in (scss files?).
-src/theme/index.scss
+src/theme.scss
 
 # Ignore build folders
 dist

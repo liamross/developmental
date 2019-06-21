@@ -1,0 +1,47 @@
+@import '../theme';
+
+.header {
+  display: grid;
+  grid-template:
+    'left middle right' auto
+    / 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.left {
+  grid-area: left;
+  display: flex;
+}
+
+.leftLink {
+  display: flex;
+  align-items: center;
+  @include link();
+}
+
+.leftImage {
+  height: 28px !important;
+  width: 28px !important;
+}
+
+.leftText {
+  display: none;
+  @media (min-width: $phone-upper-boundary) {
+    display: block;
+  }
+}
+
+.middle {
+  grid-area: middle;
+  font-size: $font-size-h4;
+}
+
+.right {
+  grid-area: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  fill: $font-color-mid;
+  @include link();
+}
