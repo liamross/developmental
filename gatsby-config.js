@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `liamross`,
+    title: `To find a solution`,
     author: `Liam Ross`,
-    description: `A look at programming.`,
+    description: `Finding elegant solutions to some messy problems`,
     siteUrl: `https://liamross.me/`,
     social: {linkedin: `liamrosscode`, github: 'liamross'},
   },
@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/logo.png`,
+        icon: `content/assets/liam.png`,
       },
     },
     `gatsby-plugin-offline`,

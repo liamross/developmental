@@ -10,7 +10,7 @@ export default function BlogIndex({data, location}) {
 
   return (
     <Layout location={location} nonBlog>
-      <SEO title="All posts" />
+      <SEO title="All articles" />
       <List posts={posts} />
     </Layout>
   );

@@ -8,7 +8,7 @@ export default function Header() {
   const {avatar, site} = useStaticQuery(
     graphql`
       query HeaderQuery {
-        avatar: file(absolutePath: {regex: "/logo.png/"}) {
+        avatar: file(absolutePath: {regex: "/liam.png/"}) {
           childImageSharp {
             fixed(width: 50, height: 50) {
               ...GatsbyImageSharpFixed
@@ -43,10 +43,15 @@ export default function Header() {
           <span className={style.leftText}>{title}</span>
         </Link>
       </div>
-      <div className={style.middle}>A look at programming</div>
+      <div className={style.middle}></div>
       <div className={style.right}>
-        <a href={`https://github.com/${social.github}`} className={style.right}>
-          github&nbsp;
+        <a
+          href={`https://github.com/${social.github}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={style.right}
+        >
+          <span className={style.rightText}>github</span>&nbsp;
           <GitHub />
         </a>
       </div>
