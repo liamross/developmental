@@ -32,7 +32,7 @@ $font-size-h2: $font-size-default * 1.25 * 1.25 * 1.25;
 $font-size-h1: $font-size-default * 1.25 * 1.25 * 1.25 * 1.25;
 
 // Line heights
-$line-height-default: $font-size-default * 2;
+$line-height-default: $font-size-default * 2.5;
 
 // Font mixins
 @mixin header-font($size, $has-top-border: false) {

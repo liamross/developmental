@@ -18,7 +18,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-family: $ibm-plex-mono;
-  margin-bottom: $font-size-default;
+  margin-bottom: $line-height-default;
 }
 
 th,
@@ -88,7 +88,7 @@ li {
 .gatsby-highlight {
   background-color: #1e1e1e;
   border-radius: 5px;
-  margin: 0 0 $font-size-default;
+  margin: 0 0 $line-height-default;
   padding: 16px;
   overflow: auto;
 
