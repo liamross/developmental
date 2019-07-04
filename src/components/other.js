@@ -4,11 +4,11 @@ import style from './other.module.scss';
 
 export default function Other({other, isNew}) {
   return (
-    <div className={style.other}>
+    <div className={[style.other, isNew ? style.new : undefined].join(' ')}>
       {other ? (
         <>
           {!isNew ? <div>←</div> : null}
-          <Link to={other.fields.slug} rel="prev">
+          <Link to={other.fields.slug} rel={isNew ? 'next' : 'prev'}>
             {isNew ? `Read the next article` : `Read the previous article`}
             <p>{other.frontmatter.title}</p>
           </Link>

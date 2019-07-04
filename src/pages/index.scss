@@ -18,7 +18,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-family: $ibm-plex-mono;
-  margin-bottom: $line-height-default;
+  margin-bottom: $font-size-default;
 }
 
 th,
@@ -42,6 +42,7 @@ h1 {
 
   &.page-title {
     margin: 0;
+    padding: $padding 0;
     text-align: center;
   }
 }
@@ -79,6 +80,30 @@ li {
   @include body-font();
 }
 
+ul,
+ol {
+  margin: 0 0 $font-size-default;
+
+  li {
+    p,
+    li {
+      margin: 0;
+    }
+  }
+}
+
+blockquote {
+  margin: 0 0 $font-size-default;
+  padding: $padding;
+  background-color: $monochromatic-light;
+  font-style: italic;
+  border-radius: $border-radius;
+
+  > p {
+    margin: 0;
+  }
+}
+
 /* --- Gatsby code highlight fix --- */
 
 /**
@@ -87,9 +112,9 @@ li {
  */
 .gatsby-highlight {
   background-color: #1e1e1e;
-  border-radius: 5px;
-  margin: 0 0 $line-height-default;
-  padding: 16px;
+  border-radius: $border-radius;
+  margin: 0 0 $font-size-default;
+  padding: $padding;
   overflow: auto;
 
   pre > code {

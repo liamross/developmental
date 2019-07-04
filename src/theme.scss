@@ -1,14 +1,14 @@
 /* --- Colors --- */
 
 // Monochromatic color variables
-$monochromatic-light:        #eee;
-$monochromatic-mid:          #ddd;
-$monochromatic-dark:         #777;
+$monochromatic-light: #eee;
+$monochromatic-mid:   #ddd;
+$monochromatic-dark:  #777;
 
 // Font color variables
-$font-color-light:           #fff;
-$font-color-mid:             #607080;
-$font-color-dark:            #252535;
+$font-color-light:    #fff;
+$font-color-mid:      #607080;
+$font-color-dark:     #252535;
 
 
 /* --- Layout --- */
@@ -16,12 +16,16 @@ $font-color-dark:            #252535;
 // Breakpoints
 $phone-upper-boundary:  475px;
 
+// Padding
+$padding: 16px;
+$border-radius: 6px;
+
 /* --- Fonts --- */
 
-$montserrat: 'Montserrat', sans-serif;
-$merriweather: 'Merriweather', serif;
+$montserrat:        'Montserrat', sans-serif;
+$merriweather:      'Merriweather', serif;
 $merriweather-sans: 'Merriweather Sans', sans-serif;
-$ibm-plex-mono: 'IBM Plex Mono', monospace;
+$ibm-plex-mono:     'IBM Plex Mono', monospace;
 
 // Font sizes
 $font-size-default: 1rem;
@@ -39,6 +43,7 @@ $line-height-default: $font-size-default * 2.5;
   font-size: $size;
   margin: 0 0 $size;
   font-family: $ibm-plex-mono;
+  font-weight: 500;
 
   @if $has-top-border {
     margin-top: $size;
