@@ -80,9 +80,15 @@ li {
   @include body-font();
 }
 
+li {
+  margin: 0;
+  padding-left: $padding;
+}
+
 ul,
 ol {
   margin: 0 0 $font-size-default;
+  padding-left: $padding;
 
   li {
     p,
@@ -93,14 +99,14 @@ ol {
 }
 
 blockquote {
-  margin: 0 0 $font-size-default;
-  padding: $padding;
+  margin: 0 -#{$font-size-default * 2} $font-size-default;
+  // To force the margin inside of blockquote.
+  padding: $padding #{$font-size-default * 2} 1px;
   background-color: $monochromatic-light;
-  font-style: italic;
-  border-radius: $border-radius;
+  border-radius: 0;
 
-  > p {
-    margin: 0;
+  @media (min-width: $phone-upper-boundary) {
+    border-radius: $border-radius;
   }
 }
 

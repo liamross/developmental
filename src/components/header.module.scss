@@ -46,9 +46,12 @@
 
 .leftText,
 .rightText {
+  transform: translateY(1px);
+}
+
+.rightText {
   display: none;
   @media (min-width: $phone-upper-boundary) {
     display: block;
   }
-  transform: translateY(1px);
 }

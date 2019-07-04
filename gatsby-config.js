@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `To find a solution`,
+    title: `Developmental`,
     author: `Liam Ross`,
-    description: `Finding elegant solutions to some messy problems`,
+    description: `Learning it without losing it`,
     siteUrl: `https://liamross.me/`,
     social: {linkedin: `liamrosscode`, github: 'liamross'},
   },
@@ -68,11 +68,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Developmental`,
+        short_name: `Developmental`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#607080`,
         display: `minimal-ui`,
         icon: `content/assets/liam.png`,
       },
