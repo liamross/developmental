@@ -12,6 +12,7 @@ body {
 code.language-text {
   color: $font-color-dark;
   background: rgba(200, 200, 0, 0.3) !important;
+  padding: 0.1rem 0.4rem !important;
 }
 
 table {
@@ -105,15 +106,18 @@ ol {
 
 blockquote {
   background-color: $monochromatic-light;
-  padding: $padding #{$font-size-default * 2} 1px;
+  padding-bottom: 1px !important;
 }
 
 blockquote,
 .gatsby-highlight {
-  margin: 0 -#{$font-size-default * 2} $font-size-default;
+  margin: 0 -#{$font-size-h1} $font-size-default;
+  padding: $padding $font-size-h1;
   border-radius: 0;
 
   @media (min-width: $phone-upper-boundary) {
+    margin: 0 -#{$padding} $font-size-default;
+    padding: $padding;
     border-radius: $border-radius;
   }
 }
@@ -127,7 +131,6 @@ blockquote,
 .gatsby-highlight {
   overflow: auto;
   background-color: $code-background;
-  padding: $padding #{$font-size-default * 2};
 
   pre > code {
     font-family: $ibm-plex-mono;
