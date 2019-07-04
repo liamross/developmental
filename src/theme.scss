@@ -2,13 +2,16 @@
 
 // Monochromatic color variables
 $monochromatic-light: #eee;
-$monochromatic-mid:   #ddd;
+$monochromatic-mid:   #ccc;
 $monochromatic-dark:  #777;
 
 // Font color variables
 $font-color-light:    #fff;
 $font-color-mid:      #607080;
 $font-color-dark:     #252535;
+
+// Code colors
+$code-background:     #1e1e1e;
 
 
 /* --- Layout --- */
@@ -37,6 +40,7 @@ $font-size-h1: $font-size-default * 1.25 * 1.25 * 1.25 * 1.25;
 
 // Line heights
 $line-height-default: $font-size-default * 2.5;
+$line-height-small: $font-size-default * 2;
 
 // Font mixins
 @mixin header-font($size, $has-top-border: false) {

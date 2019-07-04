@@ -90,7 +90,12 @@ ol {
   margin: 0 0 $font-size-default;
   padding-left: $padding;
 
+  > li {
+    margin-bottom: $font-size-default;
+  }
+
   li {
+    line-height: $line-height-small;
     p,
     li {
       margin: 0;
@@ -99,10 +104,13 @@ ol {
 }
 
 blockquote {
-  margin: 0 -#{$font-size-default * 2} $font-size-default;
-  // To force the margin inside of blockquote.
-  padding: $padding #{$font-size-default * 2} 1px;
   background-color: $monochromatic-light;
+  padding: $padding #{$font-size-default * 2} 1px;
+}
+
+blockquote,
+.gatsby-highlight {
+  margin: 0 -#{$font-size-default * 2} $font-size-default;
   border-radius: 0;
 
   @media (min-width: $phone-upper-boundary) {
@@ -117,11 +125,9 @@ blockquote {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: #1e1e1e;
-  border-radius: $border-radius;
-  margin: 0 0 $font-size-default;
-  padding: $padding;
   overflow: auto;
+  background-color: $code-background;
+  padding: $padding #{$font-size-default * 2};
 
   pre > code {
     font-family: $ibm-plex-mono;

@@ -18,7 +18,9 @@ export default function BlogPostTemplate({data, pageContext, location}) {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1 className="page-title">{post.frontmatter.title}</h1>
-        <h6 className="page-title">{post.frontmatter.date}</h6>
+        <h6 className="page-title">
+          {post.frontmatter.date} - {post.timeToRead} minute read
+        </h6>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
       </Layout>
 
@@ -44,6 +46,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -9,7 +9,9 @@ export default function List({posts}) {
       <div key={node.fields.slug} className={style.list}>
         <Link to={node.fields.slug} className={style.link}>
           <h1 className="page-title">{title}</h1>
-          <h6 className="page-title">{node.frontmatter.date}</h6>
+          <h6 className="page-title">
+            {node.frontmatter.date} - {node.timeToRead} minute read
+          </h6>
           <p
             dangerouslySetInnerHTML={{
               __html: node.frontmatter.description || node.excerpt,
