@@ -1,19 +1,22 @@
 /* --- Colors --- */
 
 // Monochromatic color variables
-$monochromatic-light: #eee;
-$monochromatic-mid:   #ccc;
-$monochromatic-dark:  #777;
+$monochromatic-light:  #eee;
+$monochromatic-mid:    #ccc;
+$monochromatic-dark:   #777;
 
 // Font color variables
-$font-color-light:    #fff;
-$font-color-mid:      #607080;
-$font-color-dark:     #252535;
+$font-color-light:     #fff;
+$font-color-mid:       #607080;
+$font-color-dark:      #252535;
+
+// Highlight
+$highlight:            #c8c800;
 
 // Code colors
-$code-background:     #1e1e1e;
-$highlight-color:     #c8c8004d;
-
+$code-background:      #1e1e1e;
+$code-inline:          rgba($highlight, 0.4);
+$code-highlight:       rgba($highlight, 0.1);
 
 /* --- Layout --- */
 

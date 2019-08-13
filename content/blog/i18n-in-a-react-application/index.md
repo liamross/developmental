@@ -151,10 +151,9 @@ this is useful for optimization, it is extremely important, even vital when
 using context. When components consume functions or variables from the context
 value, and then use them inside of a `useEffect`, it's important that these
 values do not update unless they absolutely need to, as every update will
-trigger the `useEffect`. Here are some optimizations we can do (check the
-comments for information).
+trigger the `useEffect`. Here are some optimizations we can do.
 
-```jsx
+```jsx{13-16,18-28,30-36}
 import React from 'react';
 
 const LocalizeContext = React.createContext({

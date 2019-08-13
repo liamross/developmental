@@ -11,7 +11,7 @@ body {
 
 code.language-text {
   color: $font-color-dark;
-  background: $highlight-color !important;
+  background: $code-inline !important;
   padding: 0.1rem 0.4rem !important;
 }
 
@@ -105,7 +105,7 @@ ol {
 }
 
 blockquote {
-  background-color: $highlight-color;
+  background-color: $code-inline;
   padding-bottom: 1px !important;
 }
 
@@ -165,11 +165,11 @@ blockquote,
 }
 
 .gatsby-highlight-code-line {
-  background-color: rgba(0, 100, 255, 0.2);
+  background-color: $code-highlight;
   display: block;
   margin-right: -1rem;
   margin-left: -1rem;
   padding-right: 1rem;
   padding-left: 0.75rem;
-  border-left: 0.25rem solid rgba(0, 100, 255, 0.8);
+  border-left: 0.25rem solid $highlight;
 }
