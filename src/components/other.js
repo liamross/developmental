@@ -3,7 +3,8 @@ import React from 'react';
 import style from './other.module.scss';
 
 export default function Other({other, isNew}) {
-  other = {fields: {slug: ''}, frontmatter: {title: 'Some'}};
+  // For testing:
+  // other = {fields: {slug: ''}, frontmatter: {title: 'Some'}};
   return (
     <div className={[style.other, isNew ? style.new : undefined].join(' ')}>
       {other ? (
