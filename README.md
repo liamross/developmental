@@ -1,7 +1,7 @@
-# Developmental
+# [Developmental](https://liamross.me/)
 
-"Learning it without losing it" - My personal development blog.
+"Learning it without losing it" - Liam Ross's personal development blog.
 
-Thanks for reading! If you notice an issue, feel free to open a PR.
+Check it out: https://liamross.me/
 
-https://liamross.me/
+If you notice an issue, feel free to open a PR.
