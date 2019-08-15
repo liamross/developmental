@@ -1,5 +1,5 @@
-import React from 'react';
 import {Link} from 'gatsby';
+import React from 'react';
 import style from './list.module.scss';
 
 export default function List({posts}) {
@@ -13,6 +13,7 @@ export default function List({posts}) {
             {node.frontmatter.date} - {node.timeToRead} minute read
           </h6>
           <p
+            className="page-description"
             dangerouslySetInnerHTML={{
               __html: node.frontmatter.description || node.excerpt,
             }}

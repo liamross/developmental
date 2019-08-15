@@ -1,9 +1,7 @@
 ---
 title: Internationalization in a React Application
-date: '2019-08-12'
-description:
-  "Adding multi-language support to a large React project can be tricky. Here's
-  a simple way to achieve it using React's context."
+date: '2019-08-15'
+description: 'How to easily add multi-language support to any React project.'
 tags: ['javascript', 'react']
 ---
 
@@ -50,7 +48,8 @@ const t = key => {
   return phrases[key];
 };
 
-const LocalizedComponent = () => {
+// Then to use it:
+const SomeLocalizedComponent = () => {
   return <p>{t('hello_world')}</p>;
 };
 ```
@@ -92,7 +91,15 @@ const LocalizeProvider = ({children}) => {
   );
 };
 
-const LocalizedComponent = () => {
+// Then to use it (must be wrapped in the Provider for the context to work):
+
+const App = () => {
+  <LocalizeProvider>
+    <SomeLocalizedComponent />
+  </LocalizeProvider>;
+};
+
+const SomeLocalizedComponent = () => {
   const localize = React.useContext(LocalizeContext);
 
   return <p>{localize.t('hello_world')}</p>;
@@ -103,6 +110,11 @@ A little more complicated, but not too bad. The provider context exposes the
 same `t` function as before, but also exposes a function `setLanguage` in order
 to change the language the "React way" (in a way React can detect and trigger
 updates for). Let's break it down.
+
+### Creating the context
+
+First, you need to create the context that will be consumed in order to use the
+localization:
 
 ```jsx{3-6}
 import React from 'react';
@@ -115,8 +127,14 @@ const LocalizeContext = React.createContext({
 
 Here we create the context. We put placeholders in for the two functions just in
 case you try to use the context outside of the `LocalizeProvider` we just
-constructed. To avoid this, you should make sure to wrap your root App component
-in the provider so that it is usable all the way throughout your application.
+constructed. Your functions will be useless without having a provider, so make
+sure to wrap your root App component in the provider so that you can use the
+`LocalizeContext` throughout your entire application.
+
+### Exposing the localization functions
+
+Next, you need to pass down the functions for setting the language and
+translating your phrases:
 
 ```jsx{2,10-12}
 const LocalizeProvider = ({children}) => {
@@ -255,8 +273,6 @@ The last two issues can easily be solved by adding functions within the body of
 the `LocalizeProvider`. I encourage you to browse the code and documentation for
 the [Localize Toolkit](https://github.com/xneelo/localize-toolkit) to see how
 they were implemented.
-
-## That's It
 
 Ok, that pretty much does it. It's not a very complex tool, but it provides you
 with an efficient and versatile system for implementing multiple languages in

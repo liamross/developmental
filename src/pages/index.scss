@@ -76,6 +76,12 @@ h6 {
   }
 }
 
+p {
+  &.page-description {
+    text-align: center;
+  }
+}
+
 p,
 li {
   @include body-font();
