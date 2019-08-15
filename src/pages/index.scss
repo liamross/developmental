@@ -76,6 +76,12 @@ h6 {
   }
 }
 
+a {
+  &.light {
+    color: white;
+  }
+}
+
 p {
   &.page-description {
     text-align: center;

@@ -8,7 +8,10 @@ import style from './blog-post.module.scss';
 export default function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
+  const github = data.site.siteMetadata.social.github;
   const {previous, next} = pageContext;
+
+  console.warn(location);
 
   return (
     <>
@@ -25,9 +28,23 @@ export default function BlogPostTemplate({data, pageContext, location}) {
       </Layout>
 
       <footer className={style.footer}>
-        <div className={style.footerWrapper}>
-          <Other other={previous} />
-          <Other other={next} isNew />
+        <div className={style.thanks}>
+          {'Thanks for reading! If you notice an issue, feel free to '}
+          <a
+            className="light"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`https://github.com/${github}/liamross.me/blob/master/content/blog${location.pathname}index.md`}
+          >
+            open a PR
+          </a>
+          {'.'}
+        </div>
+        <div className={style.nav}>
+          <div className={style.navWrapper}>
+            <Other other={previous} />
+            <Other other={next} isNew />
+          </div>
         </div>
       </footer>
     </>
@@ -39,7 +56,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
+        social {
+          github
+        }
       }
     }
     markdownRemark(fields: {slug: {eq: $slug}}) {

@@ -1,17 +1,27 @@
 @import '../theme';
 
 .footer {
-  width: 100%;
   background-color: $font-color-mid;
   color: $font-color-light;
+  display: flex;
+  flex-direction: column;
+  padding: 2.625rem 1.3125rem;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.nav {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.footerWrapper {
+.navWrapper {
   max-width: 50rem;
   width: 100%;
-  padding: 2.625rem 1.3125rem;
+  padding: 2.625rem 0 0;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
