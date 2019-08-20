@@ -2,4 +2,19 @@
 
 .article {
   font-family: $merriweather;
+
+  // Fancy first letter.
+  > div > p:first-of-type::first-letter {
+    font-family: $ibm-plex-mono;
+    font-size: $font-size-h1;
+
+    display: block;
+    float: left;
+    border-radius: $border-radius;
+    padding: $padding $padding;
+    margin-right: $padding;
+
+    color: #7ec699; // Same as string color in code
+    background-color: $code-background;
+  }
 }
