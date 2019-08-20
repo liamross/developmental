@@ -255,6 +255,7 @@ you'll find in the
    content into the translated phrase. For example, the key `hello_name` could
    map to the phrase `'Hello %{name}'` and allow you to set name to be
    `'John Doe'`.
+
 1. It would be nice to fetch phrases from an API. This would save space on the
    front-end by storing the large phrase objects on the back-end and fetching
    them as needed.

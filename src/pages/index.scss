@@ -13,12 +13,6 @@ body {
 
 /* --- Markdown style --- */
 
-code.language-text {
-  color: $font-color-dark;
-  background: $code-inline !important;
-  padding: 0.1rem 0.4rem !important;
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -135,6 +129,14 @@ blockquote,
 }
 
 /* --- Gatsby code highlight fix --- */
+
+// Inline code styling.
+:not(pre) > code[class*='language-'] {
+  color: $font-color-dark;
+  background: $code-inline !important;
+  padding: 0.1rem 0.4rem !important;
+  white-space: nowrap;
+}
 
 /**
  * Add back the container background-color, border-radius, padding, margin
