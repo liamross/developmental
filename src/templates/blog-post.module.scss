@@ -19,11 +19,10 @@
 }
 
 .navWrapper {
-  max-width: 50rem;
+  max-width: 53rem;
   width: 100%;
   padding: 2.625rem 0 0;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column-reverse;
 }

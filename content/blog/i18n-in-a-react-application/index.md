@@ -1,6 +1,6 @@
 ---
-title: Internationalization in a React Application
-date: '2019-08-15'
+title: I18n in a React Application
+date: '2019-08-20'
 description: 'How to easily add multi-language support to any React project.'
 tags: ['javascript', 'react']
 ---
@@ -26,10 +26,7 @@ mountains of mindless refactoring and copy-pasting later on.
 > - [Localize Toolkit](https://github.com/xneelo/localize-toolkit) - the final
 >   product
 
-<!-- First, let's take a look at some requirements for this localization system, and
-then figure out how we are going to implement it. -->
-
-## Starting Off Simple
+## Starting off simple
 
 At the most simple, a localization framework takes some sort of key and returns
 the phrase for it in the current language. This could look something like this:
@@ -59,7 +56,7 @@ language changes while LocalizedComponent is mounted, it won't update the
 `t('hello_world')`. We can solve this issue by using
 [React's Context API](https://reactjs.org/docs/context.html).
 
-## The React Way
+## The React way
 
 Ok, so let's take a crack at it using context. First off, we will use the same
 simple function we defined before and build off of that.
@@ -108,8 +105,11 @@ const SomeLocalizedComponent = () => {
 
 A little more complicated, but not too bad. The provider context exposes the
 same `t` function as before, but also exposes a function `setLanguage` in order
-to change the language the "React way" (in a way React can detect and trigger
-updates for). Let's break it down.
+to change the language the "React way". React uses a lot of patterns from the
+[functional programming paradigm](https://en.wikipedia.org/wiki/Functional_programming).
+As such, it can only observe changes when you call update functions. It is
+unable to react (no pun intended) when a variable value changes. Great, so let's
+break down what's changed.
 
 ### Creating the context
 
@@ -161,15 +161,16 @@ Also notice how both `setLanguage` and `t` are being set in the value prop of
 the provider. Anything that consumes the context has access to both of those
 functions, which means that any child can set the language, or translate a key.
 
-## Great, Let's Make It Better
+## Great, let's make it better
 
-So hooks have unlocked a bunch of ways to simplify how components are written,
-while still selectively optimizing how functions within them are memoized. While
-this is useful for optimization, it is extremely important, even vital when
-using context. When components consume functions or variables from the context
-value, and then use them inside of a `useEffect`, it's important that these
-values do not update unless they absolutely need to, as every update will
-trigger the `useEffect`. Here are some optimizations we can do.
+So you got it working, but there are many ways to improve the performance. Hooks
+have unlocked a bunch of ways to simplify how components are written, while
+still selectively optimizing how functions within them are memoized. While this
+is useful for optimization, it is extremely important, even vital when using
+context. When components consume functions or variables from the context value,
+and then use them inside of a `useEffect`, it's important that these values do
+not update unless they absolutely need to, as every update will trigger the
+`useEffect`. Here are some optimizations we can do.
 
 ```jsx{13-16,18-28,30-36}
 import React from 'react';
@@ -184,13 +185,13 @@ const englishPhrases = {hello_world: 'Hello World!'};
 const availablePhrases = {en: englishPhrases};
 
 const LocalizeProvider = ({children}) => {
-  // 1. This is actually perfect as it is. The `setLanguage` function remains
-  //    static, as React.useState is optimized this way. Returning it for use
-  //    inside a `useEffect` will not cause it to reload.
+  // 1. This is actually perfect as it is. `setLanguage` references a static
+  //    function, so you know that this will remain constant despite reloads.
   const [language, setLanguage] = React.useState('en');
 
-  // 2. Memoizing the function `t` ensures that it will remain the same to
-  //    equality checks unless the language changes. This is perfect, as we want
+  // 2. Memoizing the function `t` ensures that it will remain a reference to
+  //    the same function unless `language` is updated, as shown by the
+  //    dependency array (the array `[language]`). This is perfect, as we want
   //    the function to be called again every time the language changes so that
   //    an updated translation is displayed.
   const t = React.useCallback(
@@ -201,13 +202,14 @@ const LocalizeProvider = ({children}) => {
     [language],
   );
 
-  // 3. Memoizing the value returned will ensure that components using
-  //    LocalizeContext will only reload when the value changes, which is only
-  //    when either `setLanguage` or `t` change, which is only when `language`
-  //    changes since `setLanguage` will remain the same and `t` will only ever
-  //    change when language does. Therefore, components that consume from the
-  //    context will only automatically update every time language changes.
-  const value = React.useMemo(() => ({setLanguage, t}), [setLanguage, t]);
+  // 3. Memoizing the value returned will ensure that components that consume
+  //    LocalizeContext will only reload when this value changes. As you can
+  //    see in the dependency list (the array `[t]`), this value will update
+  //    only when `t` updates. Since `setLanguage` is a reference to a static
+  //    setter function, this does not need to be included in the dependency
+  //    array. Since `t` will only ever change when `language` does, components
+  //    that consume from the context will only update when `language` changes.
+  const value = React.useMemo(() => ({setLanguage, t}), [t]);
 
   return (
     <LocalizeContext.Provider value={value}>
@@ -239,7 +241,7 @@ reloads, and only update children when the language changes. This is exactly
 what we want: dynamic updates to all translated strings every time the language
 changes.
 
-## But Wait, There's More
+## But wait, there's more
 
 You'd be fine with that if you don't require any complexity beyond simple
 translation. However there are a few things lacking in this 33 line example that

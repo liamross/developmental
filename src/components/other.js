@@ -5,18 +5,22 @@ import style from './other.module.scss';
 export default function Other({other, isNew}) {
   // For testing:
   // other = {fields: {slug: ''}, frontmatter: {title: 'Some'}};
-  return (
-    <div className={[style.other, isNew ? style.new : undefined].join(' ')}>
-      {other ? (
-        <>
-          {!isNew ? <div>←</div> : null}
-          <Link to={other.fields.slug} rel={isNew ? 'next' : 'prev'}>
+  return other ? (
+    <Link
+      to={other.fields.slug}
+      rel={isNew ? 'next' : 'prev'}
+      className={[style.other, isNew ? style.new : undefined].join(' ')}
+    >
+      <>
+        {!isNew ? <div className={style.arrow}>←</div> : null}
+        <div className={style.otherText}>
+          <p className={style.otherPhrase}>
             {isNew ? `Read the next article` : `Read the previous article`}
-            <p>{other.frontmatter.title}</p>
-          </Link>
-          {isNew ? <div>→</div> : null}
-        </>
-      ) : null}
-    </div>
-  );
+          </p>
+          <p className={style.otherTitle}>{other.frontmatter.title}</p>
+        </div>
+        {isNew ? <div className={style.arrow}>→</div> : null}
+      </>
+    </Link>
+  ) : null;
 }

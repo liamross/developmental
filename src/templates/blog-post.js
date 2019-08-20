@@ -8,10 +8,7 @@ import style from './blog-post.module.scss';
 export default function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
-  const github = data.site.siteMetadata.social.github;
   const {previous, next} = pageContext;
-
-  console.warn(location);
 
   return (
     <>
@@ -21,9 +18,9 @@ export default function BlogPostTemplate({data, pageContext, location}) {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1 className="page-title">{post.frontmatter.title}</h1>
-        <h6 className="page-title">
+        <h5 className="page-title">
           {post.frontmatter.date} - {post.timeToRead} minute read
-        </h6>
+        </h5>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
       </Layout>
 
@@ -34,7 +31,7 @@ export default function BlogPostTemplate({data, pageContext, location}) {
             className="light"
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/${github}/liamross.me/blob/master/content/blog${location.pathname}index.md`}
+            href={`https://github.com/liamross/liamross.me/blob/master/content/blog${location.pathname}index.md`}
           >
             open a PR
           </a>

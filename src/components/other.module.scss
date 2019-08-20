@@ -1,21 +1,43 @@
 @import '../theme';
 
 .other {
+  display: flex;
+  width: 100%;
+  border: 1px solid $font-color-light;
+  padding: $padding;
+  text-decoration: none;
+  color: $font-color-light;
+
   a {
     @include link();
     color: $font-color-light;
     margin: 0 1rem;
   }
+}
 
-  p {
-    line-height: $font-size-h4;
-    margin: $font-size-default/2 0 $font-size-default;
-  }
+.otherText {
+  margin: 0 4px;
+}
 
-  display: flex;
+.otherPhrase {
+  line-height: $font-size-h4;
+  margin: 0;
+}
+
+.otherTitle {
+  line-height: $font-size-h4;
+  margin: 0;
+  @include header-font($font-size-default);
+}
+
+.arrow {
+  margin-top: 2px;
 }
 
 .new {
+  justify-content: flex-end;
+  margin-bottom: $padding;
+
   p {
     text-align: right;
   }

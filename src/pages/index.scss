@@ -1,5 +1,9 @@
-@import '../theme';
 @import '~normalize.css';
+@import '../theme';
+
+html * {
+  box-sizing: border-box;
+}
 
 body {
   color: $font-color-dark;
@@ -61,10 +65,6 @@ h4 {
 }
 
 h5 {
-  @include header-font($font-size-default);
-}
-
-h6 {
   @include header-font($font-size-default);
   color: $font-color-mid;
   font-weight: 400;
@@ -160,7 +160,7 @@ blockquote,
 .gatsby-highlight pre[class*='language-'] {
   background-color: transparent;
   margin: 0;
-  padding: 0 1rem 0 0;
+  padding: 0;
   overflow: initial;
   float: left;
   min-width: 100%;
@@ -179,9 +179,19 @@ blockquote,
 .gatsby-highlight-code-line {
   background-color: $code-highlight;
   display: block;
-  margin-right: -1rem;
-  margin-left: -1rem;
-  padding-right: 1rem;
-  padding-left: 0.75rem;
   border-left: 0.25rem solid $highlight;
+
+  padding-left: $font-size-h1 - 0.25rem;
+  padding-right: $font-size-h1;
+
+  margin-left: -#{$font-size-h1};
+  margin-right: -#{$font-size-h1};
+
+  @media (min-width: $phone-upper-boundary) {
+    padding-left: 1rem - 0.25rem;
+    padding-right: 1rem;
+
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
 }

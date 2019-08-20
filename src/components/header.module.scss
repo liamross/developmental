@@ -1,57 +1,50 @@
 @import '../theme';
 
 .header {
-  display: grid;
-  grid-template:
-    'left middle right' auto
-    / 1fr auto 1fr;
+  display: flex;
   align-items: center;
   margin-bottom: 4rem;
-  grid-column-gap: 1rem;
 }
 
 .left {
-  grid-area: left;
-  display: flex;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .leftLink {
   display: flex;
   align-items: center;
   @include link();
+  width: 100%;
+  overflow: hidden;
 }
 
 .leftImage {
+  flex: 0 0 28px;
   height: 28px !important;
   width: 28px !important;
 }
 
-.middle {
-  grid-area: middle;
-  font-size: $font-size-h3;
-  text-align: center;
-  // font-family: $merriweather;
-  // color: $font-color-mid;
-  font-weight: 100;
+.leftText {
+  flex: 1 1 auto;
+  transform: translateY(1px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 4px;
 }
 
 .right {
-  grid-area: right;
+  flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
+}
+
+.rightLink {
+  display: flex;
   align-items: center;
+  justify-content: flex-end;
   fill: $font-color-mid;
   @include link();
-}
-
-.leftText,
-.rightText {
-  transform: translateY(1px);
-}
-
-.rightText {
-  display: none;
-  @media (min-width: $phone-upper-boundary) {
-    display: block;
-  }
+  padding-left: $padding;
 }
