@@ -178,6 +178,17 @@ blockquote,
   }
 }
 
+// FIX: fix lack of right padding on scrolling non-highlighted blocks.
+.gatsby-highlight:not(.has-highlighted-lines) {
+  pre[class*='language-'] {
+    padding-right: $font-size-h1;
+
+    @media (min-width: $phone-upper-boundary) {
+      padding-right: 1rem;
+    }
+  }
+}
+
 .gatsby-highlight-code-line {
   background-color: $code-highlight;
   display: block;
