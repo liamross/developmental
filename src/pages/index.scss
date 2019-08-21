@@ -168,7 +168,7 @@ blockquote,
   min-width: 100%;
   font-weight: 300;
 
-  /* Adjust the position of the line numbers */
+  // Adjust the position of the line numbers
   &.line-numbers {
     padding-left: 2.5rem;
   }
@@ -193,6 +193,9 @@ blockquote,
   background-color: $code-highlight;
   display: block;
   border-left: 0.25rem solid $highlight;
+
+  // FIX: prevent collapsing of highlighted empty lines.
+  min-height: 1.5 * $font-size-default;
 
   padding-left: $font-size-h1 - 0.25rem;
   padding-right: $font-size-h1;

@@ -172,7 +172,7 @@ and then use them inside of a `useEffect`, it's important that these values do
 not update unless they absolutely need to, as every update will trigger the
 `useEffect`. Here are some optimizations we can do.
 
-```jsx{13-16,18-28,30-36}
+```jsx{13-15,17-28,30-36}
 import React from 'react';
 
 const LocalizeContext = React.createContext({
@@ -189,11 +189,11 @@ const LocalizeProvider = ({children}) => {
   //    function, so you know that this will remain constant despite reloads.
   const [language, setLanguage] = React.useState('en');
 
-  // 2. Memoizing the function `t` ensures that it will remain a reference to
-  //    the same function unless `language` is updated, as shown by the
-  //    dependency array (the array `[language]`). This is perfect, as we want
-  //    the function to be called again every time the language changes so that
-  //    an updated translation is displayed.
+  // 2. Memoizing the const `t` ensures that it will remain a reference to the
+  //    same function unless `language` is updated, as shown by the dependency
+  //    array (the array `[language]`). This is great, as we want the function
+  //    to be called again every time the language changes so that an updated
+  //    translation is displayed.
   const t = React.useCallback(
     key => {
       const phrases = availablePhrases[language];
