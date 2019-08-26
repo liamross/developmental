@@ -1,6 +1,6 @@
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import Image from 'gatsby-image';
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import GitHub from './github';
 import style from './header.module.scss';
 import LinkedIn from './linkedin';
@@ -40,20 +40,7 @@ export default function Header() {
   const [githubHovered, setGithubHovered] = useState(false);
   const [linkedinHovered, setLinkedinHovered] = useState(false);
 
-  const leftText = useMemo(() => {
-    if (leftHovered) return `"${description}"`;
-    if (githubHovered) return githubLink;
-    if (linkedinHovered) return linkedinLink;
-    return title;
-  }, [
-    description,
-    githubHovered,
-    githubLink,
-    leftHovered,
-    linkedinHovered,
-    linkedinLink,
-    title,
-  ]);
+  const noneHovered = !leftHovered && !githubHovered && !linkedinHovered;
 
   return (
     <header className={style.header}>
@@ -70,8 +57,39 @@ export default function Header() {
             imgStyle={{borderRadius: `50%`, width: '28px', height: '28px'}}
             className={style.leftImage}
           />
-          <div key={1} className={style.leftText}>
-            {leftText}
+          <div className={style.leftText}>
+            <div
+              className={[
+                style.leftTextInner,
+                noneHovered ? style.hovered : undefined,
+              ].join(' ')}
+            >
+              {title}
+            </div>
+            <div
+              className={[
+                style.leftTextInner,
+                leftHovered ? style.hovered : undefined,
+              ].join(' ')}
+            >
+              {`"${description}"`}
+            </div>
+            <div
+              className={[
+                style.leftTextInner,
+                githubHovered ? style.hovered : undefined,
+              ].join(' ')}
+            >
+              {githubLink}
+            </div>
+            <div
+              className={[
+                style.leftTextInner,
+                linkedinHovered ? style.hovered : undefined,
+              ].join(' ')}
+            >
+              {linkedinLink}
+            </div>
           </div>
         </Link>
       </div>

@@ -26,12 +26,28 @@
 }
 
 .leftText {
+  position: relative;
   flex: 1 1 auto;
-  transform: translateY(1px);
+  transform: translateY(2px);
+  height: $font-size-h3;
+}
+
+.leftTextInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: 4px;
+  padding-left: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hovered {
+  opacity: 1 !important;
 }
 
 .right {
