@@ -108,8 +108,8 @@ same `t` function as before, but also exposes a function `setLanguage` in order
 to change the language the "React way". React uses a lot of patterns from the
 [functional programming paradigm](https://en.wikipedia.org/wiki/Functional_programming).
 As such, it can only observe changes when you call update functions. It is
-unable to react (no pun intended) when a variable value changes. Great, so let's
-break down what's changed.
+unable to react (heh) when a variable value changes. Great, so let's break down
+what's changed.
 
 ### Creating the context
 
