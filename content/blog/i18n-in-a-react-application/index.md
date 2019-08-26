@@ -172,7 +172,7 @@ and then use them inside of a `useEffect`, it's important that these values do
 not update unless they absolutely need to, as every update will trigger the
 `useEffect`. Here are some optimizations we can do.
 
-```jsx{13-15,17-28,30-36}
+```jsx{13-15,17-28,30-37}
 import React from 'react';
 
 const LocalizeContext = React.createContext({
