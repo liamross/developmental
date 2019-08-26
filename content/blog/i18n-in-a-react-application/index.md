@@ -1,6 +1,6 @@
 ---
 title: I18n in a React Application
-date: '2019-08-20'
+date: '2019-08-26'
 description: 'How to easily add multi-language support to any React project.'
 tags: ['javascript', 'react']
 ---
