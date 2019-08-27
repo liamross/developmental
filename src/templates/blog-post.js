@@ -1,12 +1,14 @@
 import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
-import React, {useEffect, useMemo} from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import Layout from '../components/layout';
 import Other from '../components/other';
 import SEO from '../components/seo';
 import style from './blog-post.module.scss';
 
 export default function BlogPostTemplate({data, pageContext, location}) {
+  const disqusContainer = useRef(null);
+
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const {previous, next} = pageContext;
@@ -20,16 +22,26 @@ export default function BlogPostTemplate({data, pageContext, location}) {
   );
 
   useEffect(() => {
-    const disqusBottom = document.getElementById('footer');
-    if (disqusBottom) {
-      disqusBottom.remove();
-    } else {
-      setTimeout(() => {
-        const disqusBottomTimeout = document.getElementById('footer');
-        if (disqusBottomTimeout) disqusBottomTimeout.remove();
-      }, 150);
-    }
-  });
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (!mutation.addedNodes) return;
+
+        const disqusFooter = document.getElementById('footer');
+        if (disqusFooter) disqusFooter.remove();
+      });
+    });
+
+    observer.observe(disqusContainer.current, {
+      childList: true,
+      subtree: true,
+      attributes: false,
+      characterData: false,
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <>
@@ -46,7 +58,9 @@ export default function BlogPostTemplate({data, pageContext, location}) {
           className={style.post}
           dangerouslySetInnerHTML={{__html: post.html}}
         />
-        <DiscussionEmbed {...disqusConfig} />
+        <div ref={disqusContainer}>
+          <DiscussionEmbed {...disqusConfig} />
+        </div>
       </Layout>
 
       <footer className={style.footer}>
