@@ -1,5 +1,6 @@
+import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
-import React from 'react';
+import React, {useMemo} from 'react';
 import Layout from '../components/layout';
 import Other from '../components/other';
 import SEO from '../components/seo';
@@ -9,6 +10,14 @@ export default function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const {previous, next} = pageContext;
+
+  const disqusConfig = useMemo(
+    () => ({
+      shortname: process.env.GATSBY_DISQUS_NAME,
+      config: {identifier: post.fields.slug, title: siteTitle},
+    }),
+    [post.fields.slug, siteTitle],
+  );
 
   return (
     <>
@@ -22,6 +31,7 @@ export default function BlogPostTemplate({data, pageContext, location}) {
           {post.frontmatter.date} - {post.timeToRead} minute read
         </h5>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
+        <DiscussionEmbed {...disqusConfig} />
       </Layout>
 
       <footer className={style.footer}>
@@ -67,6 +77,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        slug
       }
     }
   }

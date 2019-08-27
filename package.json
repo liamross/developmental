@@ -17,6 +17,7 @@
     "url": "git+https://github.com/liamross/liamross.me.git"
   },
   "dependencies": {
+    "disqus-react": "^1.0.6",
     "gatsby": "^2.9.1",
     "gatsby-image": "^2.1.3",
     "gatsby-plugin-feed": "^2.2.3",
