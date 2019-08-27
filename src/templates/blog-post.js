@@ -30,7 +30,10 @@ export default function BlogPostTemplate({data, pageContext, location}) {
         <h5 className="page-title">
           {post.frontmatter.date} - {post.timeToRead} minute read
         </h5>
-        <div dangerouslySetInnerHTML={{__html: post.html}} />
+        <div
+          className={style.post}
+          dangerouslySetInnerHTML={{__html: post.html}}
+        />
         <DiscussionEmbed {...disqusConfig} />
       </Layout>
 

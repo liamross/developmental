@@ -1,5 +1,9 @@
 @import '../theme';
 
+.post {
+  margin-bottom: $font-size-h1 * 2;
+}
+
 .footer {
   background-color: $font-color-mid;
   color: $font-color-light;
