@@ -277,6 +277,19 @@ the `LocalizeProvider`. I encourage you to browse the code and documentation for
 the [Localize Toolkit](https://github.com/xneelo/localize-toolkit) to see how
 they were implemented.
 
+If you want to play around with the final product, here are some examples:
+
+1. [Minimal example](https://codesandbox.io/s/20-localize-toolkit-minimal-u3333)
+   - The absolute bare-bones example of using Localize Toolkit
+1. [Full example](https://codesandbox.io/s/v63mqkm95y)
+   - A full example with faked API calls to fetch new languages
+1. [Overlay pattern example](https://codesandbox.io/s/0n6xy6800)
+   - The full example, but with additional features to avoid remounting on
+     language fetch by using an overlay for loading
+1. [Pseudo Localization](https://codesandbox.io/s/20-localize-toolkit-pseudo-localization-lpp1q)
+   - An example using pseudo localization (useful for testing how other
+     languages might look without having to add them)
+
 Ok, that pretty much does it. It's not a very complex tool, but it provides you
 with an efficient and versatile system for implementing multiple languages in
 your application. Obviously the actual toolkit is a fair bit more complex and
