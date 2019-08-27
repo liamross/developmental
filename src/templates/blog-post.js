@@ -1,6 +1,6 @@
 import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
-import React, {useEffect, useMemo, useRef} from 'react';
+import React, {useMemo, useRef} from 'react';
 import Layout from '../components/layout';
 import Other from '../components/other';
 import SEO from '../components/seo';
@@ -20,28 +20,6 @@ export default function BlogPostTemplate({data, pageContext, location}) {
     }),
     [post.fields.slug, siteTitle],
   );
-
-  useEffect(() => {
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        if (!mutation.addedNodes) return;
-
-        const disqusFooter = document.getElementById('footer');
-        if (disqusFooter) disqusFooter.remove();
-      });
-    });
-
-    observer.observe(disqusContainer.current, {
-      childList: true,
-      subtree: true,
-      attributes: false,
-      characterData: false,
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   return (
     <>
