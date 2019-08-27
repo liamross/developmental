@@ -7,7 +7,7 @@ tags: ['javascript', 'react']
 
 If you are working on an application that will require multiple-language
 support, then you've probably already given some thought to
-[internationalization and localization](https://en.wikipedia.org/wiki/Internationalization_and_localization).
+[internationalization (I18n) and localization](https://en.wikipedia.org/wiki/Internationalization_and_localization).
 Whether you have or not, here is my suggestion:
 
 **_Do not wait until you need additional languages to implement localization in
