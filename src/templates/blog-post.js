@@ -1,6 +1,6 @@
 import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import Layout from '../components/layout';
 import Other from '../components/other';
 import SEO from '../components/seo';
@@ -18,6 +18,18 @@ export default function BlogPostTemplate({data, pageContext, location}) {
     }),
     [post.fields.slug, siteTitle],
   );
+
+  useEffect(() => {
+    const disqusBottom = document.getElementById('footer');
+    if (disqusBottom) {
+      disqusBottom.remove();
+    } else {
+      setTimeout(() => {
+        const disqusBottomTimeout = document.getElementById('footer');
+        if (disqusBottomTimeout) disqusBottomTimeout.remove();
+      }, 150);
+    }
+  });
 
   return (
     <>
