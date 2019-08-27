@@ -244,8 +244,8 @@ changes.
 ## But wait, there's more
 
 You'd be fine with that if you don't require any complexity beyond simple
-translation. However there are a few things lacking in this 33 line example that
-you'll find in the
+translation. However there are a few things lacking in this ~30 line example
+that you'll find in the
 [final product (Localize Toolkit)](https://github.com/xneelo/localize-toolkit):
 
 1. A system for organizing phrases would be beneficial. In this example, they
