@@ -1,6 +1,7 @@
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import Image from 'gatsby-image';
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
+import {isMobileDevice} from '../utils/deviceUtils';
 import GitHub from './github';
 import style from './header.module.scss';
 import LinkedIn from './linkedin';
@@ -32,6 +33,8 @@ export default function Header() {
       }
     `,
   );
+
+  const isMobile = useMemo(isMobileDevice, []);
 
   const {title, description, author, social} = site.siteMetadata;
 
@@ -66,7 +69,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                noneHovered ? style.hovered : undefined,
+                noneHovered || isMobile ? style.hovered : undefined,
               ].join(' ')}
             >
               {title}
@@ -74,7 +77,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                leftHovered ? style.hovered : undefined,
+                leftHovered && !isMobile ? style.hovered : undefined,
               ].join(' ')}
             >
               {`"${description}"`}
@@ -82,7 +85,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                githubHovered ? style.hovered : undefined,
+                githubHovered && !isMobile ? style.hovered : undefined,
               ].join(' ')}
             >
               {githubLink}
@@ -90,7 +93,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                linkedinHovered ? style.hovered : undefined,
+                linkedinHovered && !isMobile ? style.hovered : undefined,
               ].join(' ')}
             >
               {linkedinLink}
@@ -98,7 +101,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                npmHovered ? style.hovered : undefined,
+                npmHovered && !isMobile ? style.hovered : undefined,
               ].join(' ')}
             >
               {npmLink}

@@ -1,6 +1,5 @@
-import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
-import React, {useMemo, useRef} from 'react';
+import React, {useRef} from 'react';
 import Layout from '../components/layout';
 import Other from '../components/other';
 import SEO from '../components/seo';
@@ -12,14 +11,6 @@ export default function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const {previous, next} = pageContext;
-
-  const disqusConfig = useMemo(
-    () => ({
-      shortname: process.env.GATSBY_DISQUS_NAME,
-      config: {identifier: post.fields.slug, title: siteTitle},
-    }),
-    [post.fields.slug, siteTitle],
-  );
 
   return (
     <>
@@ -36,9 +27,7 @@ export default function BlogPostTemplate({data, pageContext, location}) {
           className={style.post}
           dangerouslySetInnerHTML={{__html: post.html}}
         />
-        <div ref={disqusContainer}>
-          <DiscussionEmbed {...disqusConfig} />
-        </div>
+        <div ref={disqusContainer}></div>
       </Layout>
 
       <footer className={style.footer}>
