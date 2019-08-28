@@ -1,6 +1,6 @@
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import Image from 'gatsby-image';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import GitHub from './github';
 import style from './header.module.scss';
 import LinkedIn from './linkedin';
@@ -32,13 +32,6 @@ export default function Header() {
     `,
   );
 
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(async () => {
-    const {isMobileDevice} = await import('../utils/deviceUtils'); // ignore this error...
-    const isMobileResponse = await isMobileDevice();
-    setIsMobile(isMobileResponse);
-  }, []);
-
   const {title, description, author, social} = site.siteMetadata;
 
   const githubLink = `github.com/${social.github}`;
@@ -69,7 +62,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                noneHovered || isMobile ? style.hovered : undefined,
+                noneHovered ? style.hovered : undefined,
               ].join(' ')}
             >
               {title}
@@ -77,7 +70,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                leftHovered && !isMobile ? style.hovered : undefined,
+                leftHovered ? style.hovered : undefined,
               ].join(' ')}
             >
               {`"${description}"`}
@@ -85,7 +78,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                githubHovered && !isMobile ? style.hovered : undefined,
+                githubHovered ? style.hovered : undefined,
               ].join(' ')}
             >
               {githubLink}
@@ -93,7 +86,7 @@ export default function Header() {
             <div
               className={[
                 style.leftTextInner,
-                linkedinHovered && !isMobile ? style.hovered : undefined,
+                linkedinHovered ? style.hovered : undefined,
               ].join(' ')}
             >
               {linkedinLink}
