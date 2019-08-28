@@ -1,7 +1,6 @@
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import Image from 'gatsby-image';
-import React, {useMemo, useState} from 'react';
-import {isMobileDevice} from '../utils/deviceUtils';
+import React, {useEffect, useState} from 'react';
 import GitHub from './github';
 import style from './header.module.scss';
 import LinkedIn from './linkedin';
@@ -33,7 +32,12 @@ export default function Header() {
     `,
   );
 
-  const isMobile = useMemo(isMobileDevice, []);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(async () => {
+    const {isMobileDevice} = await import('../utils/deviceUtils'); // ignore this error...
+    const isMobileResponse = await isMobileDevice();
+    setIsMobile(isMobileResponse);
+  }, []);
 
   const {title, description, author, social} = site.siteMetadata;
 
