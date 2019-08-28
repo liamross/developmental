@@ -5,7 +5,6 @@ import {isMobileDevice} from '../utils/deviceUtils';
 import GitHub from './github';
 import style from './header.module.scss';
 import LinkedIn from './linkedin';
-import NPM from './npm';
 
 export default function Header() {
   const {avatar, site} = useStaticQuery(
@@ -40,15 +39,12 @@ export default function Header() {
 
   const githubLink = `github.com/${social.github}`;
   const linkedinLink = `linkedin.com/in/${social.linkedin}`;
-  const npmLink = `npmjs.com/~${social.npm}`;
 
   const [leftHovered, setLeftHovered] = useState(false);
   const [githubHovered, setGithubHovered] = useState(false);
   const [linkedinHovered, setLinkedinHovered] = useState(false);
-  const [npmHovered, setNpmHovered] = useState(false);
 
-  const noneHovered =
-    !leftHovered && !githubHovered && !linkedinHovered && !npmHovered;
+  const noneHovered = !leftHovered && !githubHovered && !linkedinHovered;
 
   return (
     <header className={style.header}>
@@ -98,14 +94,6 @@ export default function Header() {
             >
               {linkedinLink}
             </div>
-            <div
-              className={[
-                style.leftTextInner,
-                npmHovered && !isMobile ? style.hovered : undefined,
-              ].join(' ')}
-            >
-              {npmLink}
-            </div>
           </div>
         </Link>
       </div>
@@ -130,16 +118,6 @@ export default function Header() {
           onMouseLeave={() => setLinkedinHovered(false)}
         >
           <LinkedIn />
-        </a>
-        <a
-          href={`https://${npmLink}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={style.rightLink}
-          onMouseEnter={() => setNpmHovered(true)}
-          onMouseLeave={() => setNpmHovered(false)}
-        >
-          <NPM />
         </a>
       </div>
     </header>
