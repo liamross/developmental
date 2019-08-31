@@ -37,9 +37,18 @@ export default function BlogPostTemplate({data, pageContext, location}) {
             className="light"
             target="_blank"
             rel="noopener noreferrer"
+            href={`https://github.com/liamross/liamross.me/issues/new`}
+          >
+            report the issue
+          </a>
+          {' or '}
+          <a
+            className="light"
+            target="_blank"
+            rel="noopener noreferrer"
             href={`https://github.com/liamross/liamross.me/blob/master/content/blog${location.pathname}index.md`}
           >
-            open a PR
+            open a pull request
           </a>
           {'.'}
         </div>
