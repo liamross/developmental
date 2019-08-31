@@ -36,7 +36,7 @@ unsure about the roadmap to a career.
 >      describes the basic **structure** of the web page. Think of it as the
 >      bones; it provides the content and order of the page, but without
 >      anything else it will be very basic (just a pile of bones). For example,
->      HTML would make your page header is "My cool site".
+>      HTML would make your page header "My cool site".
 >      - [Click here for example](https://codesandbox.io/s/just-html-jvjl9)
 >        (check out the `index.html` file in the "Explorer" on the left).
 >
