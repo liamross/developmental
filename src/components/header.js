@@ -1,21 +1,14 @@
 import {graphql, Link, useStaticQuery} from 'gatsby';
-import Image from 'gatsby-image';
 import React, {useState} from 'react';
 import GitHub from './github';
 import style from './header.module.scss';
+import Liam from './liam';
 import LinkedIn from './linkedin';
 
 export default function Header() {
-  const {avatar, site} = useStaticQuery(
+  const {site} = useStaticQuery(
     graphql`
       query HeaderQuery {
-        avatar: file(absolutePath: {regex: "/liam.png/"}) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
         site {
           siteMetadata {
             title
@@ -32,7 +25,7 @@ export default function Header() {
     `,
   );
 
-  const {title, description, author, social} = site.siteMetadata;
+  const {title, description, social} = site.siteMetadata;
 
   const githubLink = `github.com/${social.github}`;
   const linkedinLink = `linkedin.com/in/${social.linkedin}`;
@@ -52,12 +45,9 @@ export default function Header() {
           onMouseEnter={() => setLeftHovered(true)}
           onMouseLeave={() => setLeftHovered(false)}
         >
-          <Image
-            fixed={avatar.childImageSharp.fixed}
-            alt={author}
-            imgStyle={{borderRadius: `50%`, width: '28px', height: '28px'}}
-            className={style.leftImage}
-          />
+          <div className={style.leftImage}>
+            <Liam />
+          </div>
           <div className={style.leftText}>
             <div
               className={[

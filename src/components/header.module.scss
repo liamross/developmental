@@ -20,9 +20,11 @@
 }
 
 .leftImage {
-  flex: 0 0 28px;
-  height: 28px !important;
-  width: 28px !important;
+  flex: 0 0 24px;
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .leftText {
