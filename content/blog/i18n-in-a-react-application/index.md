@@ -37,8 +37,9 @@ import React from 'react';
 let language = 'en';
 
 const englishPhrases = {hello_world: 'Hello World!'};
+const frenchPhrases = {hello_world: 'Bonjour Monde!'};
 
-const availablePhrases = {en: englishPhrases};
+const availablePhrases = {en: englishPhrases, fr: frenchPhrases};
 
 const t = key => {
   const phrases = availablePhrases[language];
@@ -52,7 +53,7 @@ const SomeLocalizedComponent = () => {
 ```
 
 This is great, but you will notice that it's not really the "React way". If the
-language changes while LocalizedComponent is mounted, it won't update the
+language changes while `SomeLocalizedComponent` is mounted, it won't update the
 `t('hello_world')`. We can solve this issue by using
 [React's Context API](https://reactjs.org/docs/context.html).
 
@@ -70,8 +71,9 @@ const LocalizeContext = React.createContext({
 });
 
 const englishPhrases = {hello_world: 'Hello World!'};
+const frenchPhrases = {hello_world: 'Bonjour Monde!'};
 
-const availablePhrases = {en: englishPhrases};
+const availablePhrases = {en: englishPhrases, fr: frenchPhrases};
 
 const LocalizeProvider = ({children}) => {
   const [language, setLanguage] = React.useState('en');
@@ -172,7 +174,7 @@ and then use them inside of a `useEffect`, it's important that these values do
 not update unless they absolutely need to, as every update will trigger the
 `useEffect`. Here are some optimizations we can do.
 
-```jsx{13-15,17-28,30-37}
+```jsx{14-16,18-29,31-38}
 import React from 'react';
 
 const LocalizeContext = React.createContext({
@@ -181,8 +183,9 @@ const LocalizeContext = React.createContext({
 });
 
 const englishPhrases = {hello_world: 'Hello World!'};
+const frenchPhrases = {hello_world: 'Bonjour Monde!'};
 
-const availablePhrases = {en: englishPhrases};
+const availablePhrases = {en: englishPhrases, fr: frenchPhrases};
 
 const LocalizeProvider = ({children}) => {
   // 1. This is actually perfect as it is. `setLanguage` references a static
