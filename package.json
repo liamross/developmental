@@ -44,7 +44,6 @@
     "react-helmet": "^5.2.1",
     "typeface-ibm-plex-mono": "^0.0.61",
     "typeface-merriweather": "^0.0.72",
-    "typeface-merriweather-sans": "^0.0.72",
     "typeface-montserrat": "^0.0.54"
   },
   "devDependencies": {

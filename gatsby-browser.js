@@ -1,8 +1,7 @@
 // custom typefaces
-import 'typeface-montserrat';
-import 'typeface-merriweather';
-import 'typeface-merriweather-sans';
 import 'typeface-ibm-plex-mono';
+import 'typeface-merriweather';
+import 'typeface-montserrat';
 
 // syntax highlight
 require('prismjs/themes/prism-tomorrow.css');

@@ -11819,11 +11819,6 @@ typeface-ibm-plex-mono@^0.0.61:
   resolved "https://registry.yarnpkg.com/typeface-ibm-plex-mono/-/typeface-ibm-plex-mono-0.0.61.tgz#ee7f12643e2bfee5c5c6915350005d6dfdaa66fd"
   integrity sha512-4Pzza33ihcW1l9qSs6WmRRb6FxVoDvpoTws55V9rwN7zVqURFh1c/i4qWCmHJ0Dyr0c+pYgQVyb/aAwsRjv2Lg==
 
-typeface-merriweather-sans@^0.0.72:
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/typeface-merriweather-sans/-/typeface-merriweather-sans-0.0.72.tgz#7fe0c291f71a61050215d4c1c73b9b5556622a85"
-  integrity sha512-Mn1hvvDTXHx1nQVwJPM6Y5WIElzOMfH+UGOr98mGFTf+m90TdMjomc8Bh4t7rTaYM3/iGrtTaTOOjYeuDm7kjQ==
-
 typeface-merriweather@^0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.72.tgz#2b990f5293252052d51d170c82d3892319ff0555"
