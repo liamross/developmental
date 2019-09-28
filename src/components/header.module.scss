@@ -30,16 +30,15 @@
 .leftText {
   position: relative;
   flex: 1 1 auto;
-  transform: translateY(2px);
   height: $font-size-h3;
 }
 
 .leftTextInner {
   position: absolute;
-  top: 0;
+  top: 6px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -38,8 +38,9 @@ $font-size-small: 1rem / 1.25;
 $font-size-default: 1rem;
 
 // Header sizes
-$font-size-h4: $font-size-default;
-$font-size-h3: $font-size-default * 1.25;
+$font-size-h5: $font-size-default;
+$font-size-h4: $font-size-default * 1.25;
+$font-size-h3: $font-size-default * 1.25 * 1.25;
 $font-size-h2: $font-size-default * 1.25 * 1.25 * 1.25;
 $font-size-h1: $font-size-default * 1.25 * 1.25 * 1.25 * 1.25;
 
@@ -61,7 +62,7 @@ $line-height-small: $font-size-default * 2;
   } @else {
     margin-top: $size * 2;
 
-    &:first-of-type {
+    &:first-child {
       margin-top: $size;
     }
   }
