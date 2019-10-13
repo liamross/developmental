@@ -15,8 +15,9 @@ $highlight:            #a0a000;
 
 // Code colors
 $code-background:      #1e1e1e;
-$code-inline:          rgba($highlight, 0.4);
-$code-highlight:       rgba($highlight, 0.1);
+$code-inline:          rgba($highlight, 0.15);
+// $code-highlight:       rgba($highlight, 0.1);
+$code-highlight:       rgb(43, 43, 31); // Fix for stacking in jsx
 
 /* --- Layout --- */
 
