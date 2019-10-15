@@ -8,9 +8,10 @@ tags: ['javascript', 'react']
 If you are building anything other than a dead-simple React component, you will
 inevitably have to pass one component into another.
 
-For example, let's take a component which has the sole purpose of adding a label
-above any field passed into it. Maybe that component has a `<label>` inside, and
-takes the field as `children`. That seems fine, right?
+For example, let's take a component which has the sole purpose of adding the
+label _"Hey, I'm the label!"_ above any field passed into it. Maybe that
+component has a `<label>` inside, and takes the field as `children`. That seems
+fine, right?
 
 ```jsx
 function Label({children}) {
