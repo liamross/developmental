@@ -9,8 +9,8 @@ If you are building anything other than a dead-simple React component, you will
 inevitably have to pass one component into another.
 
 Take, for example, a component which has the sole purpose of adding a label
-above any field passed into it. As a first pass, perhaps that component has a
-`<label>` inside, and takes the field as `children`. That seems alright, right?
+above any field passed into it. Maybe that component has a `<label>` inside, and
+takes the field as `children`. That seems fine, right?
 
 ```jsx
 function Label({children}) {
@@ -53,8 +53,8 @@ work at all. Here are some of the primary ways to pass sub components:
 1. Cloning `SubComponent` as `children`
 1. Passing `SubComponent` inside an onRender function
 
-> **_Note:_** All of the examples are going to involve putting `SubComponent`
-> into `Component`.
+> **_Note:_** All of the examples are going to involve putting a custom
+> component named `SubComponent` into another one named `Component`.
 
 ## 1. Passing `SubComponent` as `children`
 
