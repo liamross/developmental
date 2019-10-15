@@ -244,7 +244,7 @@ leave the logic to the sub component, whereas cloning lets the component decide.
 
 ## 5. Wait you said there were only 4
 
-Well there are always more ways to do things! Let's tackle one more.
+Well there are always more ways to do things -- let's tackle one more.
 
 Suppose you want to solve the same label problem. You've settled on cloning
 because that seemed like the best option. However, some of the fields are
@@ -292,8 +292,8 @@ ReactDOM.render(
 In the above example, the `Label` component is providing the `id` for
 consumption by any children, no matter how deeply nested they are. While this
 pattern could be overkill when `Input` is a direct child of `Label` (just use
-clone!), it is yet another way to provide values from inside the parent.
+clone), it is yet another way to provide values from inside the parent.
 
 That pretty much covers the primary ways to pass in children. Each one serves a
 purpose, and together they will allow you to build sophisticated React
-applications!
+applications.
