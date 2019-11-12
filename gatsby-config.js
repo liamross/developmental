@@ -3,7 +3,7 @@ module.exports = {
     title: `Developmental`,
     author: `Liam Ross`,
     description: `Learning it without losing it`,
-    siteUrl: `https://www.elopmental.dev/`,
+    siteUrl: `https://elopmental.dev/`,
     social: {linkedin: `liamrosscode`, github: 'liamross', npm: 'liamross'},
   },
   plugins: [
