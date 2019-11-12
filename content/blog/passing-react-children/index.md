@@ -32,7 +32,7 @@ to the field that it is labelling based on the field's `id`. This would require
 both the label component and the field child to have the same `id`. How would we
 achieve this?
 
-```jsx{2}
+```jsx{2-3}
 function Label({children}) {
   // How do we get this into children???
   const id = generateRandomId();
