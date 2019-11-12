@@ -37,7 +37,7 @@ export default function BlogPostTemplate({data, pageContext, location}) {
             className="light"
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/liamross/liamross.me/issues/new`}
+            href={`https://github.com/liamross/developmental/issues/new`}
           >
             report the issue
           </a>
@@ -46,7 +46,7 @@ export default function BlogPostTemplate({data, pageContext, location}) {
             className="light"
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/liamross/liamross.me/blob/master/content/blog${location.pathname}index.md`}
+            href={`https://github.com/liamross/developmental/blob/master/content/blog${location.pathname}index.md`}
           >
             open a pull request
           </a>

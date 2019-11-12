@@ -1,10 +1,10 @@
 {
-  "name": "liamross.me",
+  "name": "developmental",
   "private": true,
   "description": "Learning it without losing it",
   "version": "0.0.0",
   "author": "Liam Ross <liamross.code@gmail.com>",
-  "homepage": "https://liamross.me/",
+  "homepage": "https://www.elopmental.dev/",
   "keywords": [
     "liam",
     "ross",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liamross/liamross.me.git"
+    "url": "git+https://github.com/liamross/developmental.git"
   },
   "dependencies": {
     "gatsby": "^2.9.1",
