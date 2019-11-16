@@ -73,7 +73,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#607080`,
-        display: `fullscreen`,
+        display: `standalone`,
         icon: `content/assets/liam.png`,
       },
     },
