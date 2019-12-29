@@ -69,7 +69,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Developmental`,
-        short_name: `Developmental`,
+        short_name: `DVLPMNTL`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#607080`,
