@@ -155,6 +155,7 @@ blockquote,
 // Inline code styling.
 :not(pre) > code[class*='language-'] {
   color: $font-color-dark;
+  font-family: $ibm-plex-mono;
   background: $code-inline !important;
   padding: 0.1rem 0.4rem !important;
   white-space: nowrap;
