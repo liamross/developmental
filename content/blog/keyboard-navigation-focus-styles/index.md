@@ -11,8 +11,12 @@ see the currently focused element on the page while using keyboard navigation
 (<kbd>Tab</kbd> to move forward and <kbd>Shift</kbd>+<kbd>Tab</kbd> to move
 back).
 
-When you add a button to your application, it probably looks something like this
-at first:
+However, we only want the indicator to appear when the user is relying on
+keyboard navigation. If the user is simply clicking the button, a bright focus
+ring is unnecessary and can impact the appearance of your app.
+
+When you first add a button to your application, it probably looks something
+like this:
 
 <button>Click Me!</button>
 
@@ -20,8 +24,7 @@ at first:
 
 You will notice that your button will not get a focus state when you click on
 it. However, pressing the tab key will create a blue outline around the button.
-This is intended, as you only see the bright focus ring when using keyboard
-navigation to move through your page.
+Based on our requirements, this is working perfectly!
 
 ## Issue 1 - Chrome removes default behavior
 
@@ -38,15 +41,16 @@ If you click that button on Chrome, you will see something like this:
 
 ![Focus ring on styled button in Chrome](./focus_chrome.png)
 
-Oh no! It has a blue focus ring even without using tab. This messes with the
-aesthetics of our application, as now whenever a button is clicked it will get a
-blue ring around it. Ideally, we only want the ring to appear when the user is
-tabbing.
+Well... now it seems to have a blue focus ring even without using tab. Now,
+whenever a button is clicked it will get a blue ring around it. Ideally, we only
+want the ring to appear when the user is tabbing.
 
 ## Issue 2 - Unable to change defaults
 
-Another issue is that there is no way to re-style this default focus state.
-Perhaps you want to change the color to red, so you add the following style:
+Another issue is that there is no way to re-style this default focus state. In
+order to improve the appearance of your app, you might want to style the focus
+state of your buttons. In this case, let's say you want to change the focus ring
+color to red, so you add the following style:
 
 ```css
 .button-style-focus:focus {
