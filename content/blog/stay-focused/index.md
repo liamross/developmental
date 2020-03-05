@@ -2,7 +2,7 @@
 title: Stay Focused!
 date: '2019-09-28'
 description: 'Locking focus within a React component.'
-tags: ['javascript', 'react']
+tags: ['javascript', 'react', 'accessibility']
 ---
 
 We're going to look at how to trap

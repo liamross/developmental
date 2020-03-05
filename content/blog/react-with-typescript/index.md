@@ -2,7 +2,7 @@
 title: React with TypeScript v3.7
 date: '2019-12-29'
 description: 'How some of the new features of TypeScript v3.7 work with React.'
-tags: ['javascript', 'react', 'typescript']
+tags: ['react', 'typescript']
 ---
 
 With
@@ -20,7 +20,7 @@ that may or may not exist. Specifically, if you run into a null or undefined, it
 will prevent you from accessing any deeper, rather than throwing an error. You
 may have seen errors like these before:
 
-```
+```sh
 Uncaught TypeError: Cannot read property 'c' of undefined
 
 Uncaught TypeError: a.b.c is not a function
@@ -120,9 +120,9 @@ const CountButton = (props: CountButtonProps) => {
   const onClick = () => {
     setStateCount(count + 1);
     props.onClick?.(count + 1);
-  }
+  };
 
-  return <button onClick={onClick}></button>
+  return <button onClick={onClick}></button>;
 };
 ```
 

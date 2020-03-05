@@ -234,3 +234,9 @@ blockquote,
     margin-right: -1rem;
   }
 }
+
+/* --- Story specific styles. --- */
+
+.button-style-focus:focus {
+  outline: red auto 5px;
+}
