@@ -187,8 +187,13 @@ class UserTabbingObservable {
 }
 ```
 
-This is personal preference, but it provides an easy way for individual hook
-instances to subscribe to the listener results.
+The fact that it uses a subscriber pattern is personal preference, you could
+just as easily do an event listener pattern, or any method to allow individual
+hooks to subscribe to the result.
+
+The reason for creating an observable class is that we can instantiate it a
+single time and then subscribe and unsubscribe hooks as they are created /
+unmounted. This is more efficient than each hook adding it's own listeners.
 
 Next, we are going to add the same JavaScript listeners, as well as some checks
 when new subscribers are added, or all subscribers are removed.
@@ -256,10 +261,8 @@ class UserTabbingObservable {
 }
 ```
 
-The reason for creating an observable class is that we can instantiate it a
-single time and then subscribe and unsubscribe hooks as they are created /
-unmounted. The actual hook will be quite simple, it will merely subscribe to a
-single instance of this observable class, and return a boolean:
+The actual hook will be quite simple, it will merely subscribe to a single
+instance of this observable class, and return a boolean:
 
 ```js
 const observable = new UserTabbingObservable();
