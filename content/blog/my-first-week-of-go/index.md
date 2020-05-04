@@ -11,9 +11,9 @@ positive is that I have ended up with much more time on my hands! So I have:
 - Taken another crack at [Rust](https://www.rust-lang.org/)
 - Started working through
   [Crafting Interpreters](https://craftinginterpreters.com/) (which has been
-  fantastic, both in the content and writing style. Recommend it.)
+  fantastic, both in the content and writing style)
 - Taken an actual look at [Svelte](https://svelte.dev/) (not bad, cool approach,
-  so much animation built in! But unrelated so I won't mention it again.)
+  so much animation built in)
 - Tried out [Go](https://golang.org/)
 
 Until this week, I hadn't written a single line of Go, and had only seen it when
