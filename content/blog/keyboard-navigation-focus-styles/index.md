@@ -214,8 +214,7 @@ class UserTabbingObservable {
         this._mouseToTabListener();
       }
     }
-    const exists = this._subscribers.includes(subscriber);
-    if (!exists) this._subscribers.push(subscriber);
+    this._subscribers.push(subscriber);
     return this._unsubscribe(subscriber);
   }
 

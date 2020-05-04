@@ -147,6 +147,8 @@ blockquote,
     margin: 0 -#{$padding} $font-size-default;
     padding: $padding;
     border-radius: $border-radius;
+    // If I want to limit the height of code.
+    // max-height: 510px;
   }
 }
 
