@@ -31,8 +31,8 @@ regarding the simplicity and ease of learning, but a few things turned me away:
 Anyways, fast forward a few weeks and working with Rust was bumming me out.
 Primarily, the dev tools just weren't working for me, and a total lack of
 hinting when learning a new language was brutal. On top of that, I was starting
-to realize that while I wanted a fast language, my use case (web apps) didn't
-require something as heavy duty and "safe" as Rust.
+to realize that while I wanted something lower level than JavaScript, my use
+case (web apps) didn't require something as heavy duty and "safe" as Rust.
 
 > I've since
 > [learned in a Hacker News post](https://news.ycombinator.com/item?id=22995466)
