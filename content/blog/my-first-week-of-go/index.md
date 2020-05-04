@@ -141,7 +141,7 @@ Now for some of the things I found strange:
     world, but I'm coming from JavaScript where pointers are only talked about
     in hushed whispers). It also means you have to be careful and check if a
     pointer is `nil` before dereferencing it, or you'll get runtime errors.
-    Obviously, this makes the language a lot less safe than Rust.
+    Obviously, this makes the language a lot less safe compared to Rust.
 1.  Packages and modules stuff. This tripped me up, embarrassingly. Once I got
     Go modules working it was a lot better. Naming your packages on the top of
     the file, packages must share a directory, importing from different packages
