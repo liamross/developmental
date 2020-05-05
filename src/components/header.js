@@ -42,8 +42,8 @@ export default function Header() {
         <Link
           to={`/`}
           className={style.leftLink}
-          onMouseEnter={() => setLeftHovered(true)}
-          onMouseLeave={() => setLeftHovered(false)}
+          onMouseOver={() => setLeftHovered(true)}
+          onMouseOut={() => setLeftHovered(false)}
         >
           <div className={style.leftImage}>
             <Liam />
@@ -91,8 +91,8 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           className={style.rightLink}
-          onMouseEnter={() => setGithubHovered(true)}
-          onMouseLeave={() => setGithubHovered(false)}
+          onMouseOver={() => setGithubHovered(true)}
+          onMouseOut={() => setGithubHovered(false)}
         >
           <GitHub />
         </a>
@@ -101,8 +101,8 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           className={style.rightLink}
-          onMouseEnter={() => setLinkedinHovered(true)}
-          onMouseLeave={() => setLinkedinHovered(false)}
+          onMouseOver={() => setLinkedinHovered(true)}
+          onMouseOut={() => setLinkedinHovered(false)}
         >
           <LinkedIn />
         </a>
