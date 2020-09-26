@@ -47,7 +47,7 @@ The old reliable option. Definitely the most well-known out of all the options. 
 
 The hyped new note-taking tool / early cult formation. People have been going wild for it on twitter, so I figured I'd look into it. At the end of the day I ruled it out for a few reasons:
 
-1. It costs money ($165 USD a year if you pay for a year up front)
+1. It costs money ($165 USD a year for "Professional", or $500 USD for 5 years if you choose the "Believer" package... Hmmm)
 1. Notes taken with it don't actually look that good (but that's just, like, my opinion man -- as someone who gets a lot of joy from good looking notes and used to obsess over anatomical illustrations in my anthropology courses)
 1. It doesn't offer me anything that other free options don't have (or at least anything that I'd find useful for the kind of notes I'm taking)
 
