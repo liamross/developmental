@@ -1,7 +1,7 @@
 ---
 title: Taking Notes
 date: '2020-09-26'
-description: "The best (according to me) note-taking stack."
+description: "A comparison of modern note-taking tools"
 tags: ['notion', 'notes']
 ---
 
