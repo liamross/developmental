@@ -7,7 +7,7 @@ tags: ['notion', 'notes']
 
 I admit it: I haven't taken notes in a while. Back in university I was generally using OneNote and drawing quick illustrations on the touch screen of my Lenovo. But that was a while ago, and I just recently found a reason to take notes again.
 
-I began the [Coursera machine learning](https://www.coursera.org/learn/machine-learning) and ended up looking into note-taking solutions, trying to figure out which would suit my style and the content of the course best. After bouncing between a few different tools, my final "stack" is:
+I began the [Coursera machine learning](https://www.coursera.org/learn/machine-learning) course and ended up looking into note-taking solutions, trying to figure out which would suit my style and the content of the course best. After bouncing between a few different tools, my final "stack" is:
 
 - [Notion](https://www.notion.so/) for taking notes (you can see the notes [here](https://www.notion.so/Machine-Learning-Notes-fe3bb4e0fab84020a151739f6033e785))
 - [Excalidraw](https://excalidraw.com/) for illustrations (I won't discuss this further, but it is a great way to generate quick and easy graphics for notes without getting caught up on perfectionism -- for an example see the graphics on [this page](https://www.notion.so/Linear-Regression-with-One-Variable-c6742a27450f41118b8eb953c99275cf))
@@ -28,6 +28,14 @@ There have been an abundance of note-taking apps released recently (or not so re
 ### Tools that didn't make the cut
 
 Now for the options that I immediately ruled out:
+
+#### [OneNote](https://www.microsoft.com/en-ca/microsoft-365/onenote/)
+
+Even though it served me well in university, I decided not to use OneNote for a few reasons:
+
+1. No native code snippet support (although it can be added with a plugin)
+1. I wasn't really a fan of the infinite canvas approach, I like some more structure
+1. It feels pretty geared towards touch screens, and I'm not drawing my illustrations any more
 
 #### [Evernote](https://evernote.com/)
 
