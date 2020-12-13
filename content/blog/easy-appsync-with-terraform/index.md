@@ -22,7 +22,7 @@ In reality, it turned out to have quite a few moving parts, since there are extr
 1. create AppSync resolver for your Query field and connect to data source
 1. write resolvers in [Apache Velocity](https://velocity.apache.org/) to transform data to and from the Lambda
 
-If you're keeping track, there are about 8 entities to create, and lots of other steps for connecting them. As someone who only has moderate familiarity with AWS, I was starting to get stressed out about keeping track of all of the created services. After all, this is just a test, and I didn't to forget to delete services once I'd finished testing it out.
+If you're keeping track, there are about 8 entities to create, and lots of other steps for connecting them. As someone who only has moderate familiarity with AWS, I was starting to get stressed out about keeping track of all of the created services. After all, this is just a test and I didn't want to forget to delete services once I'd finished testing it out.
 
 I have used [Serverless](https://www.serverless.com/) in the past, but research into using it for AppSync led me to [this plugin](https://www.serverless.com/). I wasn't a fan of the "wall of yaml" configuration, or the fact that previous usage of Serverless had created services without me explicitly saying to, so I decided to look into [Hashicorp's Terraform](https://www.terraform.io/) instead.
 
