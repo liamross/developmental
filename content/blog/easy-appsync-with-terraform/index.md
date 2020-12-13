@@ -307,6 +307,6 @@ That's all you need! It may have seemed like a lot, but in reality `main.tf` is 
 
 Feel free to take a minute to compare your code with [the demo repository](https://github.com/liamross/appsync-terraform-go-example).
 
-Now that you've done all the work to create the config, you can actually deploy it! Follow the instructions in the demo repo's README for setup and destroying the resources when you are done. Keep in mind that if you are past the 12 months of AWS's Fr
+Now that you've done all the work to create the config, you can actually deploy it! Follow the instructions in the demo repo's README for setup and destroying the resources when you are done. Keep in mind that if you are past the 12 months of AWS's Free tier, you may be charged a small amount for the AppSync executions.
 
 Overall, using Terraform has been a fantastic experience, especially for keeping track of active resources within AWS. For quick setup and tear-down it has been the perfect tool, and I feel like I have a lot more control over the services I provision. For me personally, I suspect I'll be using Terraform for most of the projects I create in the future.
