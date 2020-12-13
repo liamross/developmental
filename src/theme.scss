@@ -78,6 +78,7 @@ $line-height-small: $font-size-default * 2;
 
 @mixin link($dark: false) {
   text-decoration: none;
+  transition: opacity 0.10s ease-out;
 
   @if $dark {
     color: $font-color-dark;
